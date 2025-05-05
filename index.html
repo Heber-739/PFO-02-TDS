@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="./css/styles.css" />
-    
-    
 
     <!-- Importacion de las fuentes de nngoogle -->
     <style>
@@ -21,6 +19,7 @@
         <img class="profile_photo" src="./img/profile.jpg" alt="Foto de perfil" />
       </picture>
       <h1 class="title">Mi portafolio</h1>
+        <p class="visits">Visitas: <b id="counterValue"></b></p>
     </header>
 
     <nav class="nav">
@@ -33,6 +32,15 @@
       <a href="#form" class="a_nav">
         <img class="img_nav" src="./img/contacto.svg" />Contacto</a
       >
+      <a  class="a_nav" onclick="openColorModal()" >
+        <img class="img_nav" src="./img/temas.svg" />Tema</a
+      >
+      <div class="temas" id="colorModal">
+        <div class="color" onclick="changeColor('blue')" >Azul</div>
+        <div class="color" onclick="changeColor('red')" >Rojo</div>
+        <div class="color" onclick="changeColor('green')" >Verde</div>
+        <div class="color" onclick="changeColor('dark')" >Dark</div>
+      </div>
     </nav>
 
     <main >
@@ -298,7 +306,9 @@
         >
       </div>
     </footer>
+    <script src="./js/visitCounter.js"></script>
     <script src="./js/mailer.js"></script>
+    <script src="./js/themes.js"></script>
   </body>
 </html>
 

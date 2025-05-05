@@ -89,14 +89,26 @@ p {
 }
 
 .subtitle {
-      clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
     font-size: 1.4rem;
+  }
+
+  .visits {
+    position: absolute;
+    width: fit-content;
+    top: 0;
+    right: 0;
+    margin: 10px;
+  }
+
+  .visit_container * {
+    font-size: 0.7rem;
   }
 
   .nav {
     display: flex;
     justify-content: space-around;
-    width: clamp(50px, 100dvw, 500px);
+    width: clamp(50px, 95dvw, 500px);
     position: sticky;
     top: 0;
     z-index: 1;
@@ -104,6 +116,36 @@ p {
     padding: 5px 0px;
     height: fit-content;
     background-color: white;
+  }
+
+  .temas {
+    position: absolute;
+    top: 120%;
+    display: none;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-around;
+    margin: 0 auto;
+  }
+
+  .color {
+    padding: 5px 20px;
+    border-radius: 50px;
+    background-color: aqua;
+    margin: 0px auto;
+  }
+
+  .color:first-child {
+    background-color: blue;
+  }
+  .color:nth-child(2) { 
+    background-color: crimson;
+  }
+  .color:nth-child(3) { 
+    background-color: green;
+  }
+  .color:last-child {
+    background-color: black;
   }
   
   .a_nav {
@@ -167,6 +209,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     margin: calc(0.1px + 10dvw) 0px;
+    background-color: white;
 }
 .target, .movies_target {
     border: 2px solid black;
@@ -176,37 +219,38 @@ p {
     width: 97%;
     border-radius: 20px;
     background-color: var(--color2);
-}
-
-.target {
+  }
+  
+  .target {
     max-width: 400px;
-}
-.target:nth-child(2) {
+    padding: 5px 10px;
+  }
+  .target:nth-child(2) {
     flex-direction: row-reverse;
-}
-
-.target_illustration,.movies_illustration {
+  }
+  
+  .target_illustration,.movies_illustration {
     height: fit-content;
     width: 100%;
     display: inline-flex;
     margin: auto;
-}
-
-.target_illustration{
+  }
+  
+  .target_illustration{
     border-radius: 100px;
-}
-
-.target_picture, .movies_picture {
+  }
+  
+  .target_picture, .movies_picture {
     display: flex;
     width: 35%;
     height: 100%;
-    background-color: white;
-}
-
-.target_text{
+  }
+  
+  .target_text{
     display: inline-flex;
     width: 62%;
-    padding: 10px 0px;
+    padding: 15px;
+    line-height: 1.3lh;
     margin: auto;
     text-align: justify;
     color: var(--contrast-text);
@@ -214,18 +258,14 @@ p {
     
     flex-direction: column;
     flex-wrap: wrap;
-}
-.target_text  span{
-
-    /* font-weight: bold; */
-}
-
-.skills_subtitle {
+  }
+  
+  .skills_subtitle {
     width: fit-content;
     margin: 10px auto 40px;
-}
-
-.list_skills, .list_proyects {
+  }
+  
+  .list_skills, .list_proyects {
     width: 95%;
     display: grid;
     justify-content: space-evenly;
@@ -234,8 +274,8 @@ p {
     margin: 20px auto;
     /* list-style: none; */
     
-}
-.skill_items {
+  }
+  .skill_items {
     text-align: left;
     margin: 0px auto;
     background-color: var(--color1);
@@ -363,7 +403,6 @@ p {
     width: 62%;
     justify-content: center;
     margin: auto;
-    
   }
 .movie_text{
     width: 100%;
@@ -402,4 +441,27 @@ p {
     flex-direction: column;
     text-align: center;
     gap: 10px;
+  }
+
+  @media (width < 720px) {
+    .movies_target {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .movies_picture{
+     width: 90%;
+     padding: 1%;
+     margin: 10px auto 15px;
+    }
+
+    .movie_description_container{
+      width: 95%;
+      row-gap: 10px;
+    }
+
+    .a_nav {
+      font-size: 0.8rem;
+    }
+
   }
